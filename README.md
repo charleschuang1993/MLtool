@@ -5,9 +5,9 @@
 - ### example
 
 ```
-mode <- "svm"  
+mode <- "randomForest"  
 equation <- "response~."
 pred_type<- "class"
-pred_result_ <- ML_prediction(train_set, test_set[1,], "ethnicity_v2~.")
+pred_result_ <- ML_prediction(train_set, test_set, equation, pred_type)
 
 ```
