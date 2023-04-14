@@ -18,3 +18,17 @@ ML_prediction<- function(train_set, test_set, equation, mode="randomForest", pre
     return(list("pred"=pred,"accuracy"=accuracy))        
  } 
 
+
+#' 將樣本分成訓練集與測試集
+#' @param df
+#' @param trainset_prob 輸入訓練集的比例
+#' @return 回傳訓練集與測試集
+#' @export
+
+splitsample <- function(df,trainset_prob){
+    sample <- sample(c(TRUE, FALSE), nrow(df), replace=TRUE, prob=c(trainset_prob,1-trainset_prob))
+    train  <- df[sample, ]
+    test   <- df[!sample, ]
+    list_ <- list("train_set" = train  , "test_set" = test   )
+    return(list_)
+}
