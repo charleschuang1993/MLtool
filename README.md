@@ -4,10 +4,10 @@
 
 - ### example
 
-'''
+```
 mode <- "svm"  
 equation <- "response~."
 pred_type<- "class"
 pred_result_ <- ML_prediction(train_set, test_set[1,], "ethnicity_v2~.")
 
-'''
+```
