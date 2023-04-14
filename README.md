@@ -5,7 +5,7 @@
 - ### example
 
 ```
-mode <- "randomForest"  
+mode <- "randomForest"  # randomForest
 equation <- "response~."
 pred_type<- "class"
 pred_result_ <- ML_prediction(train_set, test_set, equation, pred_type)
