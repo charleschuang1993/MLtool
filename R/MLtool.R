@@ -1,10 +1,10 @@
 #' 機器學習預測模型
 #' 方便快速替換不同模型
-#' @param train_set
-#' @param test_set
-#' @param equation
+#' @param train_set 訓練集
+#' @param test_set 測試集
+#' @param equation 方程式
 #' @param mode SVM, randomForest (default), rpart(DT), glm
-#' @param pred_type 
+#' @param pred_type 預測回傳值的類型 (response, class ...)
 #' @return 回傳預測結果
 #' @export
 
@@ -20,7 +20,7 @@ ML_prediction<- function(train_set, test_set, equation, mode="randomForest", pre
 
 
 #' 將樣本分成訓練集與測試集
-#' @param df
+#' @param df 原始數據
 #' @param trainset_prob 輸入訓練集的比例
 #' @return 回傳訓練集與測試集
 #' @export
