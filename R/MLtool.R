@@ -13,11 +13,10 @@ ML_prediction<- function(train_set, test_set, response, variables, mode="randomF
     algorithm <- get(mode)
     model <- algorithm(formula_ , train_set)
     pred_train <- predict(model, train_set, type = pred_type)
-    
-    conf_mat <- table(real = train_set$"response" , predict= pred_train ) #confusion matrix
-    accuracy <- sum(diag(conf_mat)) / sum(conf_mat)
+    #conf_mat <- table(real = train_set[["response"]] , predict= pred_train ) #confusion matrix
+    #accuracy <- sum(diag(conf_mat)) / sum(conf_mat)
     pred_test <- predict(model, test_set, type = pred_type)
-    return(list("pred"=pred_test,"validated_accuracy"=accuracy))        
+    return(list("pred"=pred_test))        
  } 
 
 
