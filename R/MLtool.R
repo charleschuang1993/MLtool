@@ -9,7 +9,7 @@
 #' @export
 
 ML_prediction<- function(train_set, test_set, response, variables, mode="randomForest", pred_type = "class"){
-    formula_ <- formula(paste0(response,paste0(variables,collapse="+"),collapse="~"))
+    formula_ <- formula(paste0(c(response,paste0(variables,collapse="+")),collapse="~"))
     algorithm <- get(mode)
     model <- algorithm(formula_ , train_set)
     pred <- predict(model, test_set, type = pred_type)
