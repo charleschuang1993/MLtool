@@ -8,7 +8,8 @@
 ML_prediction(
   train_set,
   test_set,
-  equation,
+  response,
+  variables,
   mode = "randomForest",
   pred_type = "class"
 )
@@ -18,11 +19,11 @@ ML_prediction(
 
 \item{test_set}{測試集}
 
-\item{equation}{方程式}
-
 \item{mode}{SVM, randomForest (default), rpart(DT), glm}
 
 \item{pred_type}{預測回傳值的類型 (response, class ...)}
+
+\item{equation}{方程式}
 }
 \value{
 回傳預測結果
