@@ -8,12 +8,12 @@
 #' @return 回傳預測結果
 #' @export
 
-ML_prediction<- function(train_set, test_set, equation, mode="randomForest", pred_type = "class"){
-    formula_ <- formula(equation)
+ML_prediction<- function(train_set, test_set, response, variables, mode="randomForest", pred_type = "class"){
+    formula_ <- formula(paste0(response,paste0(variables,collapse="+"),collapse="~"))
     algorithm <- get(mode)
     model <- algorithm(formula_ , train_set)
     pred <- predict(model, test_set, type = pred_type)
-    conf_mat <- table(real = test_set$ethnicity_v2 , predict=pred) #confusion matrix
+    conf_mat <- table(real = test_set$response , predict=pred) #confusion matrix
     accuracy <- sum(diag(conf_mat)) / sum(conf_mat)
     return(list("pred"=pred,"accuracy"=accuracy))        
  } 
